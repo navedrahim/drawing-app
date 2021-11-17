@@ -7,7 +7,7 @@ const SALT_ROUNDS = Number(process.env.SALT_ROUNDS) || 11;
 const TOKEN_KEY = process.env.TOKEN_KEY || "areallylonggoodkey";
 
 const today = new Date();
-const exp = Date(today)
+const exp = new Date(today)
 exp.setDate(today.getDate() + 30)
 
 export const signUp = async (req, res) => {
