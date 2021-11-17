@@ -36,9 +36,14 @@ export const createDrawing = async (req, res) => {
 }
 
 export const updateDrawing = async (req, res) => {
-  const { id } = req.params
-  const drawing = await Drawing.findByIdAndUpdate(id, req.body, { new: true })
-  res.status(200).json(drawing)
+  try {
+    const { id } = req.params
+    const drawing = await Drawing.findByIdAndUpdate(id, req.body, { new: true })
+    res.status(200).json(drawing)
+  } catch (error) {
+    console.log(error.message)
+    res.status(500).json({ error: error.message })
+  }
 }
 
 export const deleteDrawing = async (req, res) => {
