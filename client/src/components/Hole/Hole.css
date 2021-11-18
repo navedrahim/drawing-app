@@ -1,0 +1,7 @@
+.hole {
+  height: 100%;
+  width: 5%;
+  border-radius: 50%;
+  background-color: black;
+  margin: 1px;
+}
