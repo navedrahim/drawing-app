@@ -1,25 +1,33 @@
-import { useState } from "react"
-import "./Hole.css"
+import { useState } from "react";
+import "./Hole.css";
 
-function Hole({ selectedColor }){
-  const [pegColor, setPegColor] = useState("")
-  const [colorSet, setColorSet] = useState(false)
+function Hole({ selectedColor, reset }) {
+  const [pegColor, setPegColor] = useState("");
+  const [colorSet, setColorSet] = useState(false);
+  
   const handleClick = () => {
-    setPegColor(selectedColor)
-    setColorSet(true)
-  }
+    setPegColor(selectedColor);
+    setColorSet(true);
+  };
+
+  
+
   const handleMouseEnter = () => {
-    if (!colorSet) setPegColor(selectedColor)
-  }
+    if (!colorSet) setPegColor(selectedColor);
+  };
 
   const handleMouseLeave = () => {
-    if (!colorSet) setPegColor("black")
-  }
+    if (!colorSet) setPegColor("black");
+  };
   return (
-    <div onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{backgroundColor: pegColor}} className="hole">
-
-    </div>
-  )
+    <div
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{ backgroundColor: pegColor }}
+      className={reset ? "hole black" : "hole" }
+    ></div>
+  );
 }
 
-export default Hole
+export default Hole;
