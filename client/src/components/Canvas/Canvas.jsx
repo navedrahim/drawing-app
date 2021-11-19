@@ -10,6 +10,7 @@ function Canvas({ selectedColor, reset, light }){
     <div className="canvas">
       {rows}
     </div>
+   
   )
 }
 

@@ -33,7 +33,7 @@ function Landing(){
         <div className="card">
           <h3 className="name">Nicholas Rynearson</h3>
           <p></p>
-          <img src="https://i.imgur.com/kHvKSSc.jpg" alt="Nicholas" />
+          <img src="https://i.imgur.com/YZ1YPJt.png" alt="Nicholas" />
           <div className="links">
           </div>
         </div>
