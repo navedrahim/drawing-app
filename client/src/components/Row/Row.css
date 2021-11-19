@@ -1,5 +1,6 @@
 .row {
   display: flex;
-  height: 5%;
+  height: 4.5%;
+  margin: .25% 0;
   width: 100%;
 }

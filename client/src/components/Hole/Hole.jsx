@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Hole.css";
 
-function Hole({ selectedColor, reset }) {
+function Hole({ selectedColor, reset, light }) {
   const [pegColor, setPegColor] = useState("");
   const [colorSet, setColorSet] = useState(false);
   
@@ -10,8 +10,6 @@ function Hole({ selectedColor, reset }) {
     setColorSet(true);
   };
 
-  
-
   const handleMouseEnter = () => {
     if (!colorSet) setPegColor(selectedColor);
   };
@@ -19,13 +17,20 @@ function Hole({ selectedColor, reset }) {
   const handleMouseLeave = () => {
     if (!colorSet) setPegColor("black");
   };
+  
+  useEffect(() => {
+    if (reset) {
+      setPegColor("black")
+      setColorSet(false)
+    }
+    }, [reset])
   return (
     <div
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ backgroundColor: pegColor }}
-      className={reset ? "hole black" : "hole" }
+      className={light && colorSet ? "hole light" : "hole"}
     ></div>
   );
 }
