@@ -1,6 +1,15 @@
 .landing-page {
   padding: 2vh 5vw;
+  background-color: rgb(47, 46, 46);
+  color: white;
+}
 
+.landing-page h1, h3 {
+  margin: 2vh 0;
+}
+
+.landing-page header {
+  margin: 1vh 0;
 }
 
 .landing-main {
@@ -29,15 +38,16 @@
   width: 38vw;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 8px;
   padding: 8px;
-  margin: 5%;
+  margin: 10px;
 }
 
 .card img {
   max-width: 120px;
   max-height: 120px;
+  border: 1px solid white;
   border-radius: 100%;
 }
 
@@ -51,4 +61,5 @@
 .links img {
   max-height: 85px;
   width: 80%;
+  border: none;
 }

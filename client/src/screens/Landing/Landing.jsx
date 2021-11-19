@@ -21,9 +21,9 @@ function Landing(){
         </div>
       </main>
       <div className="meet-the-engineers">
-        <p className="meet-section">
+        <h3 className="meet-section">
           Meet the engineers:
-        </p>
+        </h3>
         <div className="card-container">
         <div className="card">
           <h3 className="name">Naved Rahim</h3>
