@@ -43,6 +43,10 @@ function DrawingCanvas() {
       .catch(err => console.log(err))
   }
 
+  const handleClick = () => {
+    setSelectedFile(exportComponentAsPNG(panelRef))
+    handleUpload(selectedFile)
+  }
 
   return (
     <div className="drawing-canvas">
@@ -72,7 +76,7 @@ function DrawingCanvas() {
             <button onClick={handleReset}>Reset</button>
   
             <button
-              onClick={() => handleUpload(exportComponentAsPNG(panelRef))}
+              onClick={handleClick}
               className="button"
             >
               Save
