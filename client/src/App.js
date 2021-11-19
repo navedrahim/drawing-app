@@ -24,12 +24,10 @@ function App() {
        {/* <Route exact path="/">
           <Landing />
         </Route>
-        <Route exact path="/sign-up">
-          <SignUp />
-        </Route>
         <Route exact path="/profile">
           <Profile />
         </Route> */}
+        <Route path="/" element={<Landing />}/>
         <Route path="/draw" element={<DrawingCanvas />}/>
         <Route path="/sign-in" element={<SignIn setUser={setUser}/>} />
         <Route path="/sign-up" element={<SignUp setUser={setUser}/>} />

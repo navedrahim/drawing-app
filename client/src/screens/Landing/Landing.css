@@ -1,0 +1,19 @@
+.meet-the-engineers {
+  display: flex;
+  flex-direction: column;
+
+}
+.card-container {
+  display: flex;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+}
+
+.card img {
+  max-width: 60%;
+  height: 60%;
+  border-radius: 50%;
+}
