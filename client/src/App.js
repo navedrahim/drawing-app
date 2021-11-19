@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { verifyUser } from "./services/users.js"
 import Landing from "./screens/Landing/Landing.jsx"
 import SignIn from "./screens/SignIn/SignIn.jsx"
+import SignUp from "./screens/SignUp/SignUp.jsx"
 import DrawingCanvas from "./screens/DrawingCanvas/DrawingCanvas.jsx";
 import './App.css';
 
@@ -31,6 +32,7 @@ function App() {
         </Route> */}
         <Route path="/draw" element={<DrawingCanvas />}/>
         <Route path="/sign-in" element={<SignIn setUser={setUser}/>} />
+        <Route path="/sign-up" element={<SignUp setUser={setUser}/>} />
         {/* <Route exact path="/drawings">
           <Gallery />
         </Route>
