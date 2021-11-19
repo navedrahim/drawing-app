@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { CompactPicker } from "react-color";
-import Canvas from "../../components/Canvas/Canvas";
+import Canvas from "../../components/Canvas/Canvas.jsx";
 import "./DrawingCanvas.css";
 function DrawingCanvas() {
   const [selectedColor, setColor] = useState("");
