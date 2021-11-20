@@ -1,6 +1,6 @@
 .landing-page {
   padding: 2vh 5vw;
-  background-color: rgb(47, 46, 46);
+  background-color: rgb(9, 12, 18);
   color: white;
 }
 
@@ -21,7 +21,8 @@
 .main-text {
   width: 50vw;
 }
-.meet-the-engineers {
+
+ .meet-the-engineers {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,33 +34,47 @@
   padding: 5px 10px;
 }
 .card {
+  background-color: rgb(55, 52, 53);
   display: flex;
   flex-direction: column;
-  width: 38vw;
+  max-width: 30vw;
   align-items: center;
   justify-content: flex-start;
   border: 1px solid white;
   border-radius: 8px;
   padding: 8px;
-  margin: 10px;
+  margin: 10px 30px;
 }
-
-.card img {
-  max-width: 120px;
-  max-height: 120px;
+.name {
+  font-size: 1.7em;
+  font-weight: 400;
+}
+.pic {
+  max-width: 150px;
+  max-height: 150px;
   border: 1px solid white;
   border-radius: 100%;
+  margin: 15px 0;
+}
+.statement-container {
+  height: 55%;
+}
+.card p {
+  font-size: 1em;
+  font-weight: 300;
+  margin: 10px 0;
+  padding: 0 15px;
 }
 
 .links {
   display: flex;
-  height: 20%;
-  justify-content: center;
-  padding: 5px;
+  height: 30%;
+  justify-content: space-around;
 }
 
-.links img {
-  max-height: 85px;
-  width: 80%;
+.icon {
+  height: 60px;
+  margin: 10px 20px;
   border: none;
-}
+  border-radius: none;
+} 

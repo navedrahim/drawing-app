@@ -65,7 +65,7 @@ function DrawingCanvas() {
         </div>
         <div className="tools-area">
           <div className="color-picker">
-            <CompactPicker
+            <CompactPicker id="compact-picker"
               color={selectedColor}
               onChangeComplete={changeColor}
             />
