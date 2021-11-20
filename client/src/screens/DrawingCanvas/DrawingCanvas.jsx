@@ -1,14 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { CompactPicker } from "react-color";
+import html2canvas from "html2canvas";
 import { uploadFile } from "react-s3";
-import { exportComponentAsPNG } from "react-component-export-image";
 import Canvas from "../../components/Canvas/Canvas.jsx";
 import "./DrawingCanvas.css";
 function DrawingCanvas() {
   const [selectedColor, setColor] = useState("");
   const [reset, setReset] = useState(false);
   const [light, toggleLight] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null)
 
   const panelRef = useRef();
   const changeColor = (color) => {
@@ -33,20 +32,25 @@ function DrawingCanvas() {
     region: REGION,
     accessKeyId: ACCESS_KEY,
     secretAccessKey: SECRET_ACCESS_KEY,
-  }
-//   const handleFileInput = (e) => {
-//     setSelectedFile(e.target.files[0]);
-// }
+  };
+
   const handleUpload = async (file) => {
     uploadFile(file, config)
-      .then(data => console.log(data))
-      .catch(err => console.log(err))
-  }
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  };
 
-  const handleClick = () => {
-    setSelectedFile(exportComponentAsPNG(panelRef))
-    handleUpload(selectedFile)
-  }
+  const handleDownloadImage = async () => {
+    const element = panelRef.current;
+    const canvas = await html2canvas(element);
+
+    canvas.toBlob(function (blob) {
+      const blobName = Math.random() * 1000;
+      blob.name = `${blobName}.png`;
+      console.log(blob);
+      handleUpload(blob);
+    });
+  };
 
   return (
     <div className="drawing-canvas">
@@ -69,23 +73,15 @@ function DrawingCanvas() {
           <div className="button-container">
             <button
               onClick={handleLight}
-              style={{ backgroundColor: light ? "yellow" : "gray" }}
+              style={{ backgroundColor: light ? "yellow" : "lightgray" }}
             >
               Light
             </button>
             <button onClick={handleReset}>Reset</button>
-  
-            <button
-              onClick={handleClick}
-              className="button"
-            >
+            <button onClick={handleDownloadImage} className="button">
               Save
             </button>
           </div>
-          {/* <div className="upload">
-          <input type="file" onChange={handleFileInput}/>
-        <button onClick={() => handleUpload(selectedFile)}> Upload to S3</button>
-          </div> */}
         </div>
       </div>
     </div>
