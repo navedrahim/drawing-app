@@ -61,7 +61,7 @@ function DrawingCanvas() {
         </div>
         <div className="tools-area">
           <div className="color-picker">
-            <CompactPicker
+            <CompactPicker id="compact-picker"
               color={selectedColor}
               onChangeComplete={changeColor}
             />
@@ -69,7 +69,7 @@ function DrawingCanvas() {
           <div className="button-container">
             <button
               onClick={handleLight}
-              style={{ backgroundColor: light ? "yellow" : "gray" }}
+              style={{ backgroundColor: light ? "yellow" : "lightgray" }}
             >
               Light
             </button>
