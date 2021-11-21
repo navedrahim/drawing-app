@@ -1,0 +1,8 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 5%;
+  padding: 5vh 8vw;
+  background-color: var(--darkgray);
+  color: var(--orange);
+}
