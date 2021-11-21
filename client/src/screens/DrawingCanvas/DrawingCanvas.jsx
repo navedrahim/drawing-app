@@ -4,18 +4,22 @@ import html2canvas from "html2canvas";
 import { uploadFile } from "react-s3";
 import Canvas from "../../components/Canvas/Canvas.jsx";
 import { createDrawing } from "../../services/drawings.js";
+import { useNavigate } from "react-router-dom";
 import "./DrawingCanvas.css";
+import { set } from "mongoose";
+
 function DrawingCanvas({ user }) {
   const [selectedColor, setColor] = useState("");
   const [reset, setReset] = useState(false);
   const [light, toggleLight] = useState(false);
-  const [drawingData, setData] = useState({})
+  const [drawingData, setDrawingData] = useState({})
+  const [loaded, setLoaded] = useState(false)
   const [drawing, setDrawing] = useState({
     title: "",
     image_url: "",
     user_id: ""
   })
-
+  const navigate = useNavigate();
   const panelRef = useRef();
   const changeColor = (color) => {
     setColor(color.hex);
@@ -43,17 +47,38 @@ function DrawingCanvas({ user }) {
 
   
 
+  // const handleUpload = async (file) => {
+  //   uploadFile(file, config)
+  //     .then((data) => setData(data))
+  //     .catch((err) => console.log(err));
+  // };
+
+
   const handleUpload = async (file) => {
-    uploadFile(file, config)
-      .then((data) => setData(data))
-      .catch((err) => console.log(err));
-    setDrawing({
-      title: "user",
-      image_url: drawingData.location,
-      user_id: "12345"
-    });
-    await createDrawing(drawing)
+    try {
+      const data = await uploadFile(file, config)
+      setDrawingData(data)
+      setLoaded(true)
+      
+    } catch (error) {
+      throw error
+    }
   };
+
+    if (loaded) {
+      setDrawing({
+        title: user.username,
+        image_url: drawingData.location,
+        user_id: "12345"
+      })
+      const postDrawing = async () => {
+        await createDrawing(drawing)
+      }
+      setLoaded(false)
+      postDrawing()
+      navigate("/drawings")
+
+    }
 
   const handleDownloadImage = async () => {
     const element = panelRef.current;
