@@ -5,6 +5,8 @@ import Landing from "./screens/Landing/Landing.jsx"
 import SignIn from "./screens/SignIn/SignIn.jsx"
 import SignUp from "./screens/SignUp/SignUp.jsx"
 import DrawingCanvas from "./screens/DrawingCanvas/DrawingCanvas.jsx";
+import Nav from "./components/Nav/Nav.jsx"
+import Footer from "./components/Footer/Footer.jsx"
 import './App.css';
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <Routes>
        {/* <Route exact path="/">
           <Landing />
@@ -41,6 +44,7 @@ function App() {
           <EditDrawing />
         </Route> */}
       </Routes>
+      <Footer/>
     </div>
   );
 }

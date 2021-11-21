@@ -7,11 +7,11 @@ a {
     0 0 7px #fff,
     0 0 10px #fff,
     0 0 21px #fff,
-    0 0 42px #0fa,
-    0 0 82px #0fa,
-    0 0 92px #0fa,
-    0 0 102px #0fa,
-    0 0 151px #0fa;
+    0 0 42px var(--blue),
+    0 0 82px var(--blue),
+    0 0 92px var(--blue),
+    0 0 102px var(--blue),
+    0 0 151px var(--blue);
     margin-left: 3vw;
     margin-right: 2vw;
     font-size: 28px;
@@ -25,11 +25,11 @@ a {
   0 0 7px #fff,
   0 0 10px #fff,
   0 0 21px #fff,
-  0 0 42px darkviolet,
-  0 0 82px darkviolet,
-  0 0 92px darkviolet,
-  0 0 102px darkviolet,
-  0 0 151px darkviolet;
+  0 0 42px var(--pink),
+  0 0 82px var(--pink),
+  0 0 92px var(--pink),
+  0 0 102px var(--pink),
+  0 0 151px var(--pink);
   font-size: 18px;
   margin-left: 2vw;
   margin-right: 6vw;
@@ -41,5 +41,6 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #010a01;
+  background-color: var(--darkergray);
+  box-shadow: 2px 2px 15px var(--blue);
 }
