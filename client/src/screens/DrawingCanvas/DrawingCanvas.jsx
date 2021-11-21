@@ -3,11 +3,18 @@ import { CompactPicker } from "react-color";
 import html2canvas from "html2canvas";
 import { uploadFile } from "react-s3";
 import Canvas from "../../components/Canvas/Canvas.jsx";
+import { createDrawing } from "../../services/drawings.js";
 import "./DrawingCanvas.css";
-function DrawingCanvas() {
+function DrawingCanvas({ user }) {
   const [selectedColor, setColor] = useState("");
   const [reset, setReset] = useState(false);
   const [light, toggleLight] = useState(false);
+  const [drawingData, setData] = useState({})
+  const [drawing, setDrawing] = useState({
+    title: "",
+    image_url: "",
+    user_id: ""
+  })
 
   const panelRef = useRef();
   const changeColor = (color) => {
@@ -34,10 +41,18 @@ function DrawingCanvas() {
     secretAccessKey: SECRET_ACCESS_KEY,
   };
 
+  
+
   const handleUpload = async (file) => {
     uploadFile(file, config)
-      .then((data) => console.log(data))
+      .then((data) => setData(data))
       .catch((err) => console.log(err));
+    setDrawing({
+      title: "user",
+      image_url: drawingData.location,
+      user_id: "12345"
+    });
+    await createDrawing(drawing)
   };
 
   const handleDownloadImage = async () => {
@@ -47,7 +62,6 @@ function DrawingCanvas() {
     canvas.toBlob(function (blob) {
       const blobName = Math.random() * 1000;
       blob.name = `${blobName}.png`;
-      console.log(blob);
       handleUpload(blob);
     });
   };
