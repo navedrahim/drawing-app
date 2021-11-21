@@ -1,0 +1,10 @@
+.drawing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.drawing-image {
+  height: 60%;
+  max-width: 50%; 
+}
