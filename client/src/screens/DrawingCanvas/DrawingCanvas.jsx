@@ -47,11 +47,6 @@ function DrawingCanvas({ user }) {
 
   
 
-  // const handleUpload = async (file) => {
-  //   uploadFile(file, config)
-  //     .then((data) => setData(data))
-  //     .catch((err) => console.log(err));
-  // };
 
 
   const handleUpload = async (file) => {
