@@ -1,6 +1,7 @@
 import { signUp } from "../../services/users";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./SignUp.css"
 
 const SignUp = (props) => {
   const navigate = useNavigate()
@@ -41,7 +42,7 @@ const SignUp = (props) => {
   const { email, username, password, passwordConfirm } = form
 
   return (
-    <div>
+    <div className="signup-form">
       <form onSubmit={onSignUp}>
           <input
             required
