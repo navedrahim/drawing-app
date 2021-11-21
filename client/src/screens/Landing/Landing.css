@@ -1,6 +1,6 @@
 .landing-page {
   padding: 2vh 5vw;
-  background-color: rgb(9, 12, 18);
+  background-color: var(--darkergray);
   color: white;
 }
 
@@ -34,13 +34,13 @@
   padding: 5px 10px;
 }
 .card {
-  background-color: rgb(55, 52, 53);
+  background-color: var(--darkgray);
   display: flex;
   flex-direction: column;
   max-width: 30vw;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid white;
+  border: 1px solid var(--blue);
   border-radius: 8px;
   padding: 8px;
   margin: 10px 30px;
@@ -52,7 +52,7 @@
 .pic {
   max-width: 150px;
   max-height: 150px;
-  border: 1px solid white;
+  border: 1px solid var(--blue);
   border-radius: 100%;
   margin: 15px 0;
 }
