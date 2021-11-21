@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Drawing from "../../components/Drawing/Drawing.jsx"
 import { getDrawings } from "../../services/drawings.js"
+import "./Gallery.css"
 function Gallery({ user }){
   const [drawings, setDrawings] = useState([])
   
@@ -15,7 +16,7 @@ function Gallery({ user }){
   return(
     <div className="gallery">
       {drawings.map(drawing => (
-        <Drawing drawing={drawing} />
+        <Drawing key={drawing.key} drawing={drawing} />
       ))}
     </div>
   )
