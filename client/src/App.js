@@ -31,7 +31,7 @@ function App() {
           <Profile />
         </Route> */}
         <Route path="/" element={<Landing />}/>
-        <Route path="/draw" element={<DrawingCanvas />}/>
+        <Route path="/draw" element={<DrawingCanvas user={user} />}/>
         <Route path="/sign-in" element={<SignIn setUser={setUser}/>} />
         <Route path="/sign-up" element={<SignUp setUser={setUser}/>} />
         {/* <Route exact path="/drawings">
