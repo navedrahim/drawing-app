@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CompactPicker } from "react-color";
 import html2canvas from "html2canvas";
 import { uploadFile } from "react-s3";
@@ -12,13 +12,12 @@ function DrawingCanvas({ user }) {
   const [selectedColor, setColor] = useState("");
   const [reset, setReset] = useState(false);
   const [light, toggleLight] = useState(false);
-  const [drawingData, setDrawingData] = useState({});
-  const [loaded, setLoaded] = useState(false);
   const [drawing, setDrawing] = useState({
-    title: "",
+    title: user?.username,
     image_url: "",
-    user_id: "",
+    user_id: "12345",
   });
+  const [loaded, setLoaded] = useState(false)
   const navigate = useNavigate();
   const panelRef = useRef();
   const changeColor = (color) => {
@@ -45,34 +44,42 @@ function DrawingCanvas({ user }) {
     secretAccessKey: SECRET_ACCESS_KEY,
   };
 
-  const handleUpload = async (file) => {
-    try {
-      const data = await uploadFile(file, config);
-      if (data) setDrawingData(data);
-      console.log("Here is the data", (drawingData))
-      setLoaded(true);
-    } catch (error) {
-      throw error;
-    }
+  const postDrawing = async (drawing) => {
+    await createDrawing(drawing);
   };
+  
+  const handleUpload = (file) => {
+    const data = uploadFile(file, config)
+    .then(data => {setDrawing({
+      title: user?.username,
+      image_url: data.location,
+      user_id: "12345"
+    })
 
-  if (loaded) {
-    setDrawing({
-      title: user.username,
-      image_url: drawingData.location,
-      user_id: "12345",
-    });
-    setLoaded(false)
-    const postDrawing = async () => {
-      await createDrawing(drawing);
-    };
-    if (drawing.title.length > 0 && drawing.image_url.length > 0 && drawing.user_id.length > 0) {
-      // setLoaded(false);
-      postDrawing();
-      navigate("/drawings");
-    }
+    
+  })
   }
-
+  if (loaded) {
+    postDrawing(drawing)
+    navigate("/drawings")
+  }
+  // const handleUpload = async (file) => {
+  //   try {
+  //     const data = await uploadFile(file, config)
+  //     setTimeout(() => {setDrawing({
+  //       title: user?.username,
+  //       image_url: data.location,
+  //       user_id: "12345"
+  //     });
+  //   }, 1000)
+  // } catch(error) {
+  //   throw error
+  // }
+  // }
+  
+  
+  
+  
   const handleDownloadImage = async () => {
     const element = panelRef.current;
     const canvas = await html2canvas(element);
@@ -80,9 +87,13 @@ function DrawingCanvas({ user }) {
     canvas.toBlob(function (blob) {
       const blobName = Math.random() * 1000;
       blob.name = `${blobName}.png`;
+      console.log(blob)
       handleUpload(blob);
+      console.log("blob sent to s3")
     });
   };
+
+
 
   return (
     <Layout user={user}>
