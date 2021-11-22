@@ -8,8 +8,6 @@ import SignOut from "./screens/SignOut/SignOut.jsx"
 import DrawingCanvas from "./screens/DrawingCanvas/DrawingCanvas.jsx";
 import Gallery from "./screens/Gallery/Gallery.jsx"
 import DrawingDetail from "./screens/DrawingDetail/DrawingDetail.jsx"
-import Nav from "./components/Nav/Nav.jsx"
-import Footer from "./components/Footer/Footer.jsx"
 
 import './App.css';
 
@@ -26,7 +24,6 @@ function App() {
 
   return (
     <div className="App">
-      <Nav user={user}/>
       <Routes>
        {/* <Route exact path="/">
           <Landing />
@@ -51,7 +48,6 @@ function App() {
           <EditDrawing />
         </Route> */}
       </Routes>
-      <Footer/>
     </div>
   );
 }

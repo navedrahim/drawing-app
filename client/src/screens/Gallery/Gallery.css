@@ -5,4 +5,7 @@
   padding: 5vh 8vw;
   background-color: var(--darkgray);
   color: var(--orange);
+  min-height: 80vh;
+  height: fit-content;
+  overflow-y: scroll;
 }
