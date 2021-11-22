@@ -15,6 +15,7 @@ a {
     margin-left: 3vw;
     margin-right: 2vw;
     font-size: 28px;
+    width: 35vw;
 }
 .logo:hover, .link:hover {
   font-weight: bolder;
@@ -34,6 +35,28 @@ a {
   margin-left: 2vw;
   margin-right: 6vw;
 }
+
+.links {
+  width: 70vw;
+  justify-content: space-evenly;
+}
+#greeting {
+  color:#fff;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px var(--pink),
+  0 0 82px var(--pink),
+  0 0 92px var(--pink),
+  0 0 102px var(--pink),
+  0 0 151px var(--pink);
+  font-size: 18px;
+  margin-left: 2vw;
+  margin-right: 6vw;
+  font-weight: normal;
+}
+
 nav {
   width: 100vw;
   height: 10vh;

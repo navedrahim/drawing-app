@@ -1,19 +1,51 @@
-import "./Nav.css"
+import "./Nav.css";
 import { NavLink } from "react-router-dom";
 
-const Nav = () => {
-  return (
+const Nav = ({ user }) => {
+  const authenticatedOptions = (
     <>
-    <nav>
-      <NavLink className="logo" to="/">
-        DrawBrite
+      <NavLink className="link" to="/sign-out">
+        Sign Out
       </NavLink>
-      <NavLink className="link" to="/draw">
+    </>
+  );
+  const unauthenticatedOptions = (
+    <>
+      <NavLink className="link" to="/sign-up">
+        Sign Up
+      </NavLink>
+      <NavLink className="link" to="/sign-in">
+        Sign In
+      </NavLink>
+    </>
+  );
+  const alwaysOptions = (
+    <>
+      <NavLink className="link" to="draw">
         Start Drawing!
       </NavLink>
-    </nav>
+      <NavLink className="link" to="/drawings">
+        Gallery
+      </NavLink>
     </>
-  )
-}
+  );
 
-export default Nav
+  return (
+    <>
+      <nav>
+        <NavLink className="logo" to="/">
+          DrawBrite
+        </NavLink>
+        <div className="nav">
+          <div className="links">
+            <h4 id="greeting">{user ? `Hello, ${user?.username}!` : null}</h4>
+            {alwaysOptions}
+            {user ? authenticatedOptions : unauthenticatedOptions}
+          </div>
+        </div>
+      </nav>
+    </>
+  );
+};
+
+export default Nav;
