@@ -1,0 +1,44 @@
+.drawing-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--darkgray);
+  padding: 5vh 5vw;
+}
+
+.detail-image {
+  max-height: 75vh;
+}
+
+.detail-text-area {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding: 0 2%;
+  color: var(--orange);
+  font-size: 1.5em;
+}
+
+.detail-button-container button {
+  margin: 0 0 0 20px;
+  padding: 2px 6px;
+  height: 45px;
+  width: fit-content;
+  background-color: var(--darkergray);
+  border: none;
+  border-radius: 5px;
+  
+}
+#delete-button {
+  color: var(--pink);
+  font-size: .8em;
+  white-space: nowrap;
+}
+#back-button {
+  color: var(--blue);
+  font-size: .8em;
+  white-space: nowrap;
+}

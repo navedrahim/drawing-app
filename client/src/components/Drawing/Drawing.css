@@ -1,0 +1,10 @@
+.drawing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.drawing-image {
+  width: 22vw; 
+}
