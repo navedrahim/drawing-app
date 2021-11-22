@@ -5,8 +5,8 @@ import { uploadFile } from "react-s3";
 import Canvas from "../../components/Canvas/Canvas.jsx";
 import { createDrawing } from "../../services/drawings.js";
 import { useNavigate } from "react-router-dom";
+import Layout from "../../components/Layout/Layout.jsx";
 import "./DrawingCanvas.css";
-import { set } from "mongoose";
 
 function DrawingCanvas({ user }) {
   const [selectedColor, setColor] = useState("");
@@ -48,7 +48,8 @@ function DrawingCanvas({ user }) {
   const handleUpload = async (file) => {
     try {
       const data = await uploadFile(file, config);
-      setDrawingData(data);
+      if (data) setDrawingData(data);
+      console.log("Here is the data", (drawingData))
       setLoaded(true);
     } catch (error) {
       throw error;
@@ -61,12 +62,15 @@ function DrawingCanvas({ user }) {
       image_url: drawingData.location,
       user_id: "12345",
     });
+    setLoaded(false)
     const postDrawing = async () => {
       await createDrawing(drawing);
     };
-    setLoaded(false);
-    postDrawing();
-    navigate("/drawings");
+    if (drawing.title.length > 0 && drawing.image_url.length > 0 && drawing.user_id.length > 0) {
+      // setLoaded(false);
+      postDrawing();
+      navigate("/drawings");
+    }
   }
 
   const handleDownloadImage = async () => {
@@ -81,6 +85,7 @@ function DrawingCanvas({ user }) {
   };
 
   return (
+    <Layout user={user}>
     <div className="drawing-canvas">
       <div className="drawing-container">
         <div className="drawing-area">
@@ -101,28 +106,28 @@ function DrawingCanvas({ user }) {
           </div>
           <div className="button-container">
             <div className="always-buttons">
-            <button
-              onClick={handleLight}
-              style={{ backgroundColor: light ? "yellow" : "lightgray" }}
-            >
-              Light
-            </button>
-            <button onClick={handleReset}>Reset</button>
-
+              <button
+                onClick={handleLight}
+                style={{ backgroundColor: light ? "yellow" : "lightgray" }}
+              >
+                Light
+              </button>
+              <button onClick={handleReset}>Reset</button>
             </div>
             <div className="save-button">
               {user ? (
                 <button onClick={handleDownloadImage} className="button">
                   Save
                 </button>
-            ) : (
-              <div className="notice">Sign In to Save Your Creation</div>
-            )}
+              ) : (
+                <div className="notice">Sign In to Save Your Creation</div>
+              )}
             </div>
           </div>
         </div>
       </div>
     </div>
+    </Layout>
   );
 }
 
