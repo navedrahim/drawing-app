@@ -27,7 +27,7 @@ function DrawingDetail({ user }){
       <div className="detail-text-area">
         <h3 className="detail-user">{`by ${currentDrawing.title}`}</h3>
         <div className="detail-button-container">
-          {user.username == currentDrawing.title ? deleteButton : null}
+          {user?.username == currentDrawing.title ? deleteButton : null}
           <Link to="/drawings"><button id="back-button">Back to Gallery</button></Link>
         </div>
       </div>
