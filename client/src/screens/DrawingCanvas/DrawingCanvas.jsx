@@ -12,13 +12,13 @@ function DrawingCanvas({ user }) {
   const [selectedColor, setColor] = useState("");
   const [reset, setReset] = useState(false);
   const [light, toggleLight] = useState(false);
-  const [drawingData, setDrawingData] = useState({})
-  const [loaded, setLoaded] = useState(false)
+  const [drawingData, setDrawingData] = useState({});
+  const [loaded, setLoaded] = useState(false);
   const [drawing, setDrawing] = useState({
     title: "",
     image_url: "",
-    user_id: ""
-  })
+    user_id: "",
+  });
   const navigate = useNavigate();
   const panelRef = useRef();
   const changeColor = (color) => {
@@ -45,35 +45,29 @@ function DrawingCanvas({ user }) {
     secretAccessKey: SECRET_ACCESS_KEY,
   };
 
-  
-
-
-
   const handleUpload = async (file) => {
     try {
-      const data = await uploadFile(file, config)
-      setDrawingData(data)
-      setLoaded(true)
-      
+      const data = await uploadFile(file, config);
+      setDrawingData(data);
+      setLoaded(true);
     } catch (error) {
-      throw error
+      throw error;
     }
   };
 
-    if (loaded) {
-      setDrawing({
-        title: user.username,
-        image_url: drawingData.location,
-        user_id: "12345"
-      })
-      const postDrawing = async () => {
-        await createDrawing(drawing)
-      }
-      setLoaded(false)
-      postDrawing()
-      navigate("/drawings")
-
-    }
+  if (loaded) {
+    setDrawing({
+      title: user.username,
+      image_url: drawingData.location,
+      user_id: "12345",
+    });
+    const postDrawing = async () => {
+      await createDrawing(drawing);
+    };
+    setLoaded(false);
+    postDrawing();
+    navigate("/drawings");
+  }
 
   const handleDownloadImage = async () => {
     const element = panelRef.current;
@@ -99,12 +93,14 @@ function DrawingCanvas({ user }) {
         </div>
         <div className="tools-area">
           <div className="color-picker">
-            <CompactPicker id="compact-picker"
+            <CompactPicker
+              id="compact-picker"
               color={selectedColor}
               onChangeComplete={changeColor}
             />
           </div>
           <div className="button-container">
+            <div className="always-buttons">
             <button
               onClick={handleLight}
               style={{ backgroundColor: light ? "yellow" : "lightgray" }}
@@ -112,9 +108,17 @@ function DrawingCanvas({ user }) {
               Light
             </button>
             <button onClick={handleReset}>Reset</button>
-            <button onClick={handleDownloadImage} className="button">
-              Save
-            </button>
+
+            </div>
+            <div className="save-button">
+              {user ? (
+                <button onClick={handleDownloadImage} className="button">
+                  Save
+                </button>
+            ) : (
+              <div className="notice">Sign In to Save Your Creation</div>
+            )}
+            </div>
           </div>
         </div>
       </div>
