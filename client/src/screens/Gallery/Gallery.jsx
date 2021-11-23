@@ -5,7 +5,7 @@ import Layout from "../../components/Layout/Layout.jsx";
 import "./Gallery.css";
 function Gallery({ user }) {
   const [drawings, setDrawings] = useState([]);
-  
+
   useEffect(() => {
     const fetchDrawings = async () => {
       const drawingsArray = await getDrawings();
