@@ -6,13 +6,14 @@ function Landing({ user }) {
     <Layout user={user}>
       <div className="landing-page">
         <header className="landing-header">
-          <h1>DrawBrite</h1>
+          <h1 id="main-title">DrawBrite</h1>
           <p className="brief-description">
             Watch your drawings come to life with the magic of DrawBrite!
           </p>
         </header>
-        <h3 className="heading">Light up your creativity.</h3>
+        <h3 className="heading" id="secondary-title">Light up your creativity</h3>
         <main className="landing-main">
+
           <div className="main-text">
             <p className="description">
               Create designs by choosing colors to add to the grid with the
@@ -31,7 +32,7 @@ function Landing({ user }) {
           </div>
         </main>
         <div className="meet-the-engineers">
-          <h3 className="meet-section">Meet the engineers:</h3>
+          <h3 id="meet-the-engineers" className="meet-section">Meet the engineers:</h3>
           <div className="card-container">
             <div className="card">
               <h3 className="name">Naved Rahim</h3>
@@ -84,7 +85,7 @@ function Landing({ user }) {
                   learning new things. Fifteen years as a professor of Greek and
                   Latin taught me a lot about explaining complex ideas to
                   beginners. I believe a better world is possible and technology
-                  designed to empower people can help us build it. <br /> <br/> <br />
+                  designed to empower people can help us build it. <br /> <br/> <br /> <br />
                 </p>
               </div>
               <div className="landing-links">

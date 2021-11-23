@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/profile">
           <Profile />
         </Route> */}
-        <Route path="/" element={<Landing />}/>
+        <Route path="/" element={<Landing user={user}/>}/>
         <Route path="/draw" element={<DrawingCanvas user={user} />}/>
         <Route path="/sign-in" element={<SignIn setUser={setUser}/>} />
         <Route path="/sign-up" element={<SignUp setUser={setUser}/>} />
