@@ -16,7 +16,7 @@
   height: 45px;
   width: 40%;
   margin: 30px;
-
+  color: white;
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--orange);
