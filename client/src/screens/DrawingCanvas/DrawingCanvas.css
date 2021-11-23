@@ -27,13 +27,15 @@
 }
 
 .button-container button {
-  background-color: lightgray;
+  background-color: var(--darkergray);
+  color: white;
   font-size: 1.1em;
   margin: 10px;
   height: 35px;
   width: 65px;
   border: none;
   border-radius: 5%;
+  /* border:1px solid var(--pink); */
 }
 
 .notice {
