@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { signIn } from "../../services/users";
 import { useNavigate } from "react-router-dom";
-import "./SignIn.css"
+import Layout from "../../components/Layout/Layout";
+import "./SignIn.css";
 
 const SignIn = (props) => {
   const navigate = useNavigate();
@@ -40,29 +41,31 @@ const SignIn = (props) => {
   const { username, password } = form;
 
   return (
-    <div className="signin-form">
-      <form onSubmit={onSignIn}>
-        <input
-          id="signin-username"
-          required
-          type="text"
-          name="username"
-          value={username}
-          placeholder="Enter Username"
-          onChange={handleChange}
-        />
-        <input
-          id="signin-password"
-          required
-          type="password"
-          name="password"
-          value={password}
-          placeholder="Enter Password"
-          onChange={handleChange}
-        />
-        <button type="submit">Sign In</button>
-      </form>
-    </div>
+    <Layout user={props.user}>
+      <div className="signin-form">
+        <form onSubmit={onSignIn}>
+          <input
+            id="signin-username"
+            required
+            type="text"
+            name="username"
+            value={username}
+            placeholder="Enter Username"
+            onChange={handleChange}
+          />
+          <input
+            id="signin-password"
+            required
+            type="password"
+            name="password"
+            value={password}
+            placeholder="Enter Password"
+            onChange={handleChange}
+          />
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+    </Layout>
   );
 };
 

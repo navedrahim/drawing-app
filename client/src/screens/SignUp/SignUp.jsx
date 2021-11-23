@@ -1,25 +1,26 @@
 import { signUp } from "../../services/users";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./SignUp.css"
+import Layout from "../../components/Layout/Layout";
+import "./SignUp.css";
 
 const SignUp = (props) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     username: "",
     password: "",
     passwordConfirm: "",
     isError: false,
-    errorMsg: ""
-  })
+    errorMsg: "",
+  });
 
   const handleChange = (event) => {
     setForm({
       ...form,
-      [event.target.name]: event.target.value
-    })
-  }
+      [event.target.name]: event.target.value,
+    });
+  };
   const onSignUp = async (event) => {
     event.preventDefault();
     const { setUser } = props;
@@ -39,11 +40,12 @@ const SignUp = (props) => {
     }
   };
 
-  const { email, username, password, passwordConfirm } = form
+  const { email, username, password, passwordConfirm } = form;
 
   return (
-    <div className="signup-form">
-      <form onSubmit={onSignUp}>
+    <Layout user={props.user}>
+      <div className="signup-form">
+        <form onSubmit={onSignUp}>
           <input
             required
             type="text"
@@ -78,8 +80,9 @@ const SignUp = (props) => {
           />
           <button type="submit">Sign Up</button>
         </form>
-    </div>
-  )
-}
+      </div>
+    </Layout>
+  );
+};
 
-export default SignUp
+export default SignUp;
