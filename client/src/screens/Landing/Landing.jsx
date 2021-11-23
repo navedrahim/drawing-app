@@ -50,12 +50,11 @@ function Landing({ user }) {
                   will make me a valuable asset to any organization.
                 </p>
               </div>
-              <div className="links">
+              <div className="landing-links">
                 <a href="https://github.com/navedrahim" target="_blank">
                   <img
                     className="icon"
-                    src="/icons/github-brands.svg
-            "
+                    src="/icons/github-brands.svg"
                     alt=""
                   />
                 </a>
@@ -85,10 +84,10 @@ function Landing({ user }) {
                   learning new things. Fifteen years as a professor of Greek and
                   Latin taught me a lot about explaining complex ideas to
                   beginners. I believe a better world is possible and technology
-                  designed to empower people can help us build it.
+                  designed to empower people can help us build it. <br /> <br/> <br />
                 </p>
               </div>
-              <div className="links">
+              <div className="landing-links">
                 <a href="https://github.com/flexibleidealist" target="_blank">
                   <img
                     className="icon"

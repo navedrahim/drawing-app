@@ -62,11 +62,11 @@
 .card p {
   font-size: 1em;
   font-weight: 300;
-  margin: 10px 0;
+  margin: 30px 0;
   padding: 0 15px;
 }
 
-.links {
+.landing-links {
   display: flex;
   height: 30%;
   justify-content: space-around;
