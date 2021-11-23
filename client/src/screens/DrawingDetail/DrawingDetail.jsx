@@ -1,13 +1,14 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getDrawing } from "../../services/drawings";
+import { getDrawing, deleteDrawing } from "../../services/drawings";
 import Layout from "../../components/Layout/Layout";
 import "./DrawingDetail.css";
 
 function DrawingDetail({ user }) {
   const [currentDrawing, setCurrentDrawing] = useState({});
   const params = useParams();
-
+  const navigate = useNavigate();
+  
   const handleDelete = async () => {
     await deleteDrawing(params.id);
     navigate("/drawings");
