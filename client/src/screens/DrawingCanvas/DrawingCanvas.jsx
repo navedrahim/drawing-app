@@ -121,7 +121,7 @@ function DrawingCanvas({ user }) {
             <div className="always-buttons">
               <button
                 onClick={handleLight}
-                style={{ backgroundColor: light ? "yellow" : "lightgray" }}
+                style={{ backgroundColor: light ? "yellow" : "", color:light ? "black" : "white"}}
               >
                 Light
               </button>
