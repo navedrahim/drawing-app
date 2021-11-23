@@ -5,12 +5,12 @@ import Layout from "../../components/Layout/Layout.jsx";
 import "./Gallery.css";
 function Gallery({ user }) {
   const [drawings, setDrawings] = useState([]);
-  const filteredDrawings = []
-  drawings.forEach((drawing, index) => {
-    if (index % 2 !== 0) {
-      filteredDrawings.push(drawing)
-    }
-  })
+  // const filteredDrawings = []
+  // drawings.forEach((drawing, index) => {
+  //   if (index % 2 !== 0) {
+  //     filteredDrawings.push(drawing)
+  //   }
+  // })
   useEffect(() => {
     const fetchDrawings = async () => {
       const drawingsArray = await getDrawings();
@@ -22,7 +22,7 @@ function Gallery({ user }) {
   return (
     <Layout user={user}>
       <div className="gallery">
-        {filteredDrawings.map((drawing) => (
+        {drawings.map((drawing) => (
           <Drawing key={drawing.key} drawing={drawing} />
         ))}
       </div>
