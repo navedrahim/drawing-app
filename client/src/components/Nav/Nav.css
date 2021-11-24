@@ -71,3 +71,29 @@ nav {
   background-color: var(--darkergray);
   box-shadow: 2px 2px 15px var(--blue);
 }
+
+/* media queries */
+
+@media screen and (max-width: 768px) {
+  .link {
+    font-size: 14px;
+  }
+  #greeting {
+    font-size: 14px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .link {
+    font-size: 10px;
+  }
+  #greeting {
+    font-size: 14px;
+  }
+  .logo {
+    font-size: 15px;
+  }
+}

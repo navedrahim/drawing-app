@@ -1,10 +1,14 @@
 .canvas {
-  /* display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(20, 1fr); */
 
   margin: 1px auto;
   height: 80vh;
   background-color: rgb(24, 24, 24);
   aspect-ratio: 1/1;
+}
+
+@media screen and (max-width: 768px) {
+  .canvas {
+    width: 375px;
+    height: 375px;
+  }
 }
