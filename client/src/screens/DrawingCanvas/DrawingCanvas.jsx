@@ -44,21 +44,7 @@ function DrawingCanvas({ user }) {
     secretAccessKey: SECRET_ACCESS_KEY,
   };
 
-  // const postDrawing = async (drawing) => {
-  //   await createDrawing(drawing);
-  // };
   
-  // const handleUpload = (file) => {
-  //   const data = uploadFile(file, config)
-  //   .then(data => {setDrawing({
-  //     title: user?.username,
-  //     image_url: data.location,
-  //     user_id: "12345"
-  //   })
-
-    
-  // })
-  // }
   if (loaded) {
     createDrawing(drawing)
     navigate("/drawings")

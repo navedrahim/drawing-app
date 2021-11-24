@@ -6,3 +6,11 @@
 .layout-children {
   min-height: 80vh;
 }
+
+/* media queries  */
+
+@media screen and (max-width: 768px) {
+  .layout-children {
+    min-height: 100%;
+}
+}

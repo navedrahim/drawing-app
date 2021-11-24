@@ -3,6 +3,7 @@
   justify-content: space-around;
   padding: 2%;
   background-color: rgb(55, 52, 53);
+  height: 50%;
 }
 
 .tools-area {
@@ -41,4 +42,42 @@
 .notice {
   color: white;
   font-size: 1.1em;
+}
+
+/* media queries */
+
+@media screen and (max-width: 850px) {
+  .drawing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+  }
+  
+  .tools-area {
+    padding-top: 2vh;
+    display: flex;
+    flex-direction: row;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .always-buttons {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+  }
 }
