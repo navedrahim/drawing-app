@@ -34,3 +34,9 @@
   border: none;
   border-bottom: 1px solid var(--orange);
 }
+
+@media only screen and (max-width: 768px) {
+  .signin-form input {
+    width: 80%;
+  }
+}
