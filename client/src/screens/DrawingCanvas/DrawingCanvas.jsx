@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { CompactPicker } from "react-color";
 import html2canvas from "html2canvas";
-import dotenv from "dotenv";
 import { uploadFile } from "react-s3";
 import Canvas from "../../components/Canvas/Canvas.jsx";
 import { createDrawing } from "../../services/drawings.js";
@@ -33,12 +32,10 @@ function DrawingCanvas({ user }) {
     setTimeout(() => setReset(false), 10);
   };
 
-  dotenv.config()
-
   const S3_BUCKET = "drawingbucket";
   const REGION = "us-east-1";
-  const ACCESS_KEY = process.env.ACCESS_KEY;
-  const SECRET_ACCESS_KEY = process.env.SECRET_ACCESS_KEY;
+  const ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY;
+  const SECRET_ACCESS_KEY = process.env.REACT_APP_SECRET_ACCESS_KEY;
 
   const config = {
     bucketName: S3_BUCKET,
