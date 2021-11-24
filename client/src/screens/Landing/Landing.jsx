@@ -27,8 +27,8 @@ function Landing({ user }) {
               DrawBrite gallery!
             </p>
           </div>
-          <div className="video-conainter">
-            <p>video element here</p>
+          <div className="video-container">
+            <img id="video-preview" src="https://i.imgur.com/jrgcgG1.gif" alt="demo" />
           </div>
         </main>
         <div className="meet-the-engineers">

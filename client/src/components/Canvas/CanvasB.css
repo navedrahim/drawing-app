@@ -1,9 +1,0 @@
-.canvas-container {
-  background-color: rgb(26, 23, 23);
-  padding: 8px;
-}
-.canvas-b {
-  background-color: rgb(26, 23, 23);
-  display: grid;
-  grid-template-columns: repeat(20, 1fr);
-}

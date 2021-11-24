@@ -13,3 +13,7 @@ img {
   align-self: center;
   object-fit: contain;
 }
+
+button {
+  cursor: pointer;
+}
