@@ -28,7 +28,7 @@ function Landing({ user }) {
             </p>
           </div>
           <div className="video-conainter">
-            <p>video element here</p>
+            <img src="https://i.imgur.com/jrgcgG1.gif" alt="demo" />
           </div>
         </main>
         <div className="meet-the-engineers">
