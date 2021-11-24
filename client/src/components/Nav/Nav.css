@@ -1,0 +1,73 @@
+a {
+  text-decoration: none;
+}
+.logo {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px var(--blue),
+    0 0 82px var(--blue),
+    0 0 92px var(--blue),
+    0 0 102px var(--blue),
+    0 0 151px var(--blue);
+    margin-left: 3vw;
+    margin-right: 2vw;
+    font-size: 28px;
+    width: 35vw;
+}
+.logo:hover, .link:hover {
+  font-weight: bolder;
+}
+.link {
+  color:#fff;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px var(--pink),
+  0 0 82px var(--pink),
+  0 0 92px var(--pink),
+  0 0 102px var(--pink),
+  0 0 151px var(--pink);
+  font-size: 18px;
+  margin-left: 2vw;
+  margin-right: 6vw;
+}
+
+.links {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 70vw;
+  justify-content: space-evenly;
+  white-space: nowrap;
+}
+
+#greeting {
+  color:#fff;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px var(--pink),
+  0 0 82px var(--pink),
+  0 0 92px var(--pink),
+  0 0 102px var(--pink),
+  0 0 151px var(--pink);
+  font-size: 18px;
+  margin-left: 2vw;
+  margin-right: 6vw;
+  font-weight: normal;
+}
+
+nav {
+  width: 100vw;
+  height: 10vh;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--darkergray);
+  box-shadow: 2px 2px 15px var(--blue);
+}

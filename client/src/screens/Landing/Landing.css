@@ -1,0 +1,97 @@
+.landing-page {
+  padding: 2vh 5vw;
+  background-color: var(--darkergray);
+  color: white;
+}
+
+.landing-page h1, h3 {
+  margin: 2vh 0;
+}
+
+.landing-page header {
+  margin: 5vh 0 5vh 0;
+  padding: 0 5vw;
+}
+
+#main-title {
+  color: var(--orange);
+}
+#secondary-title {
+  color: var(--pink);
+  padding: 0 5vw;
+}
+.description {
+  margin-right: 5vw;
+}
+.landing-main {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5vh;
+  padding: 0 5vw;
+
+}
+
+.main-text {
+  width: 50vw;
+}
+
+ .meet-the-engineers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#meet-the-engineers {
+  color: var(--blue)
+}
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px 10px;
+}
+.card {
+  background-color: var(--darkgray);
+  display: flex;
+  flex-direction: column;
+  max-width: 30vw;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  padding: 8px;
+  margin: 10px 30px;
+}
+.name {
+  font-size: 1.7em;
+  font-weight: 400;
+}
+.pic {
+  max-width: 150px;
+  max-height: 150px;
+  border: 1px solid var(--blue);
+  border-radius: 100%;
+  margin: 15px 0;
+}
+.statement-container {
+  height: 55%;
+}
+.card p {
+  font-size: 1em;
+  font-weight: 300;
+  margin: 30px 0;
+  padding: 0 15px;
+}
+
+.landing-links {
+  display: flex;
+  height: 30%;
+  justify-content: space-around;
+}
+
+.icon {
+  height: 60px;
+  margin: 10px 20px;
+  border: none;
+  border-radius: none;
+} 
